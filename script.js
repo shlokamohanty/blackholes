@@ -5,7 +5,7 @@ const rules1 = {
   small_synonyms: ["small", "tiny"],
   text: "#[pickedanimal:#animal#]story#",
   story:
-    "i was walking to the #transport# yesterday with a friend. i looked at the #object# around me. i felt infinitesimally #small_synonyms#. she was talking about #pickedanimal.s#, but i’m bigger relative to a #pickedanimal#.",
+    "i was walking to the #transport# yesterday with a friend. i looked at the #object# around me. i felt infinitesimally #small_synonyms#. she was talking about #pickedanimal.s#, but i’m bigger relative to a #pickedanimal#. }",
 };
 
 const grammar1 = tracery.createGrammar(rules1);
@@ -21,7 +21,7 @@ const rules2 = {
   small_synonyms: ["small", "tiny"],
   text: "#[pickedhuman_synonym:#human_synonyms#]story#",
   story:
-    "i think about the #space_objects# a lot, and about how strange #pickedhuman_synonym.s# are. so consumed by our own worries, i call it the black hole syndrome, yet we are infinitesimal, ephemeral #pickedhuman_synonym.s#, as are black holes.",
+    "i think about the #space_objects# a lot, and about how strange #pickedhuman_synonym.s# are. so consumed by our own worries, i call it the black hole syndrome, yet we are infinitesimal, ephemeral #pickedhuman_synonym.s#, as are black holes. }",
 };
 
 const grammar2 = tracery.createGrammar(rules2);
@@ -29,14 +29,17 @@ if (tracery.baseEngModifiers) grammar2.addModifiers(tracery.baseEngModifiers); {
 }
 const secondParagraph = grammar2.flatten("#text#");
 
-document.getElementById("first").textContent = firstParagraph;
-
-const paragraphs = [secondParagraph]; 
+const paragraphs = [firstParagraph, secondParagraph]; // add more here
 let next = 0;
 
-document.getElementById("btn").addEventListener("click", function () {
+document.getElementById("btn1").addEventListener("click", function () {
+  document.getElementById("ascii").style.display = "block";
+  document.getElementById("btn2").style.display = "inline-block";
+});
+
+document.getElementById("btn2").addEventListener("click", function () {
   if (next < paragraphs.length) {
-    document.getElementById("second").innerHTML += paragraphs[next] + "<br><br>";
+    document.getElementById("first").innerHTML += paragraphs[next] + "<br><br>";
     next++;
   }
 });
