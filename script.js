@@ -37,9 +37,14 @@ if (tracery.baseEngModifiers) grammar2.addModifiers(tracery.baseEngModifiers); {
 }
 const secondParagraph = grammar2.flatten("#text#");
 
-const paragraphs = [firstParagraph, secondParagraph]; 
-paragraphs = shuffleArray(paragraphs)
+const paragraphs = [firstParagraph, secondParagraph];
+shuffleArray(paragraphs);
 let next = 0;
+
+document.getElementById("btn1").addEventListener("click", function () {
+  document.getElementById("ascii").style.display = "block";
+  document.getElementById("btn2").style.display = "inline-block";
+});
 
 document.getElementById("btn2").addEventListener("click", function () {
   if (next < paragraphs.length) {
