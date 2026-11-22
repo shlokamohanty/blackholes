@@ -9,7 +9,6 @@ const rules1 = {
 };
 
 const grammar1 = tracery.createGrammar(rules1);
-grammar1.addModifiers(tracery.baseEngModifiers);
 const firstParagraph = grammar1.flatten("#text#");
 
 const rules2 = {
@@ -23,7 +22,6 @@ const rules2 = {
 };
 
 const grammar2 = tracery.createGrammar(rules2);
-grammar2.addModifiers(tracery.baseEngModifiers);
 const secondParagraph = grammar2.flatten("#text#");
 
 document.getElementById("output").innerHTML =
