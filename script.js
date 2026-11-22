@@ -48,10 +48,7 @@ document.getElementById("btn1").addEventListener("click", function () {
 
 document.getElementById("btn2").addEventListener("click", function () {
   if (next < paragraphs.length) {
-    document.getElementById("first").innerHTML += paragraphs[next] + "<br><br>";
+    document.getElementById("story").innerHTML += "<p>{<br>" + paragraphs[next] + "<br>}</p>";
     next++;
-  }
-  if (next === paragraphs.length) {
-    document.getElementById("first").innerHTML += "}";
   }
 });
