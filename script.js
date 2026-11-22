@@ -47,11 +47,10 @@ document.getElementById("btn1").addEventListener("click", function () {
 });
 
 document.getElementById("btn2").addEventListener("click", function () {
-  const last = next === paragraphs.length - 1;
   document.getElementById("story").innerHTML +=
-    "<p>{ " + paragraphs[next] + (last ? "" : " }") + "</p>";
+    "<p>{ " + paragraphs[next] + " }</p>";
   next++;
-  if (last) {
+  if (next === paragraphs.length) {
     this.textContent = "}";
     this.disabled = true;
     this.style.color = "black";
