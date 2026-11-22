@@ -51,4 +51,8 @@ document.getElementById("btn2").addEventListener("click", function () {
     document.getElementById("story").innerHTML += "<p>{<br>" + paragraphs[next] + "<br>}</p>";
     next++;
   }
+  if (next === paragraphs.length) {
+    this.textContent = "}";
+    this.disabled = true;
+  }
 });
