@@ -41,11 +41,6 @@ const paragraphs = [firstParagraph, secondParagraph];
 paragraphs = shuffleArray(paragraphs)
 let next = 0;
 
-document.getElementById("btn1").addEventListener("click", function () {
-  document.getElementById("ascii").style.display = "block";
-  document.getElementById("btn2").style.display = "inline-block";
-});
-
 document.getElementById("btn2").addEventListener("click", function () {
   if (next < paragraphs.length) {
     document.getElementById("first").innerHTML += paragraphs[next] + "<br><br>";
@@ -53,6 +48,5 @@ document.getElementById("btn2").addEventListener("click", function () {
   }
   if (next === paragraphs.length) {
     document.getElementById("first").innerHTML += "}";
-    this.style.display = "none"; // hide the { once everything is revealed
   }
 });
