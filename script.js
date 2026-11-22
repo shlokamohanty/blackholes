@@ -47,12 +47,13 @@ document.getElementById("btn1").addEventListener("click", function () {
 });
 
 document.getElementById("btn2").addEventListener("click", function () {
-  if (next < paragraphs.length) {
-    document.getElementById("story").innerHTML += "<p>{<br>" + paragraphs[next] + "<br>}</p>";
-    next++;
-  }
-  if (next === paragraphs.length) {
+  const last = next === paragraphs.length - 1;
+  document.getElementById("story").innerHTML +=
+    "<p>{ " + paragraphs[next] + (last ? "" : " }") + "</p>";
+  next++;
+  if (last) {
     this.textContent = "}";
     this.disabled = true;
+    this.style.color = "black";
   }
 });
