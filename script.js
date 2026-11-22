@@ -29,5 +29,14 @@ if (tracery.baseEngModifiers) grammar2.addModifiers(tracery.baseEngModifiers); {
 }
 const secondParagraph = grammar2.flatten("#text#");
 
-document.getElementById("output").innerHTML =
-  firstParagraph + "<br><br>" + secondParagraph;
+document.getElementById("first").textContent = firstParagraph;
+
+const paragraphs = [secondParagraph]; 
+let next = 0;
+
+document.getElementById("btn").addEventListener("click", function () {
+  if (next < paragraphs.length) {
+    document.getElementById("second").innerHTML += paragraphs[next] + "<br><br>";
+    next++;
+  }
+});
