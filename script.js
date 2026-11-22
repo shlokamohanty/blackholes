@@ -1,3 +1,11 @@
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 const rules1 = {
   animal: ["cat", "dog", "cow"],
   transport: ["station", "bus", "car"],
@@ -29,7 +37,8 @@ if (tracery.baseEngModifiers) grammar2.addModifiers(tracery.baseEngModifiers); {
 }
 const secondParagraph = grammar2.flatten("#text#");
 
-const paragraphs = [firstParagraph, secondParagraph]; // add more here
+const paragraphs = [firstParagraph, secondParagraph]; 
+paragraphs = shuffleArray(paragraphs)
 let next = 0;
 
 document.getElementById("btn1").addEventListener("click", function () {
@@ -41,5 +50,9 @@ document.getElementById("btn2").addEventListener("click", function () {
   if (next < paragraphs.length) {
     document.getElementById("first").innerHTML += paragraphs[next] + "<br><br>";
     next++;
+  }
+  if (next === paragraphs.length) {
+    document.getElementById("first").innerHTML += "}";
+    this.style.display = "none"; // hide the { once everything is revealed
   }
 });
