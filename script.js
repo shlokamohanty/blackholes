@@ -1,4 +1,3 @@
-const tracery = require("tracery-grammar"); 
 const rules1 = {
   animal: ["cat", "dog", "cow"],
   transport: ["station", "bus", "car"],
