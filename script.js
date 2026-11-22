@@ -27,5 +27,5 @@ const grammar2 = tracery.createGrammar(rules2);
 grammar2.addModifiers(tracery.baseEngModifiers);
 const secondParagraph = grammar2.flatten("#text#");
 
-console.log(firstParagraph);
-console.log(secondParagraph);
+document.getElementById("output").innerHTML =
+  firstParagraph + "<br><br>" + secondParagraph;
